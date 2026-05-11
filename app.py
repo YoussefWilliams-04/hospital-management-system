@@ -5,7 +5,7 @@ from datetime import date
 
 #from routes.routes_patient import patient_bp 
 
-#from routes.routes_employee import employee_bp 
+from routes.routes_employee import employee_bp 
 
 #from routes.routes_medicine import medicine_bp 
 
@@ -21,7 +21,7 @@ with app.app_context():
 
 
 #app.register_blueprint(patient_bp)
-#app.register_blueprint(employee_bp)
+app.register_blueprint(employee_bp)
 #app.register_blueprint(medicine_bp)
 
 
