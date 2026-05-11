@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-1">
+    <h5 class="text-center">Welcome to employee module - add new employee</h5>
+</div>
+
+<div class="container mt-1">
+    <h6 class="text-center">Please fill the form below to add new employee</h6>
+</div>
+
+<form method="POST">
+    <div class="mb-2">
+        <label class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" required>
+    </div>
+
+    <div class="mb-2">
+        <label class="form-label">Role</label>
+        <input type="text" name="role" class="form-control" required>
+    </div>
+
+    <div class="mb-2">
+        <label class="form-label">Phone</label>
+        <input type="text" name="phone" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Department</label>
+        <input type="text" name="department" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
+{% endblock %}
