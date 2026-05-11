@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-1">
+    <h5 class="text-center">Welcome to Patient Module - Add Patient</h5>
+</div>
+<form method="POST">
+    <div class="mb-2">
+        <label>Name</label>
+        <input type="text" name="name" class="form-control" required>
+    </div>
+
+    <div class="mb-2">
+        <label>Age</label>
+        <input type="number" name="age" class="form-control" required>
+    </div>
+
+    <div class="mb-2">
+        <label>Phone</label>
+        <input type="number" name="phone" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Address</label>
+        <input type="text" name="address" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success" id="save-btn">Save</button>
+
+
+    <button type="submit" class="btn btn-success" id="save-btn">Save</button>
+</form>
+{% endblock %}
+
+<script>
+    Document.addEventlistener("DOMContentLoaded", function () {
+        Document.addEventlistener("#save-btn", "click", function (event) {
+            event.preventDefault();
+            alert("Data saved successfully");
+        });
+
+    });
+</script>
