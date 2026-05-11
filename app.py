@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from datetime import date
 
 
-#from routes.routes_patient import patient_bp 
+from routes.routes_patient import patient_bp 
 
 #from routes.routes_employee import employee_bp 
 
@@ -20,7 +20,7 @@ with app.app_context():
     db.create_all()
 
 
-#app.register_blueprint(patient_bp)
+app.register_blueprint(patient_bp)
 #app.register_blueprint(employee_bp)
 #app.register_blueprint(medicine_bp)
 
