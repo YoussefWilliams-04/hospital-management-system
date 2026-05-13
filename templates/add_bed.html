@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-1">
+    <h5 class="text-center">Add Bed</h5>
+</div>
+<form method="POST">
+    <label>Patient</label>
+    <select name="patient" class="form-control" required>
+        {% for p in patient %}
+        <option value="{{ p.name }}">{{ p.name }}</option>
+        {% endfor %}-
+    </select>
+
+    <div class="mb-2">
+        <label>Status</label>
+        <select name="status" class="form-control">
+            <option value="occupied">Occupied</option>
+            <option value="available">Available</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success" id="save-btn">Save</button>
+</form>
+{% endblock %}
+
+<script>
+    Document.addEventlistener("DOMContentLoaded", function () {
+        Document.addEventlistener("#save-btn", "click", function (event) {
+            event.preventDefault();
+            alert("Data saved successfully");
+        });
+
+    });
+</script>

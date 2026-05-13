@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 class="text-center"> View Beds</h3>
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Patient</th>
+            <th>Status</th>
+            <th>Action</th>
+        <tr>
+    </thead>
+    <tbody>
+        {% for b in beds %}
+        <tr>
+            <td>{{b.id}}</td>
+            <td>{{b.patient}}</td>
+            <td>{{b.status}}</td>
+            <td>
+                <a href="/edit_bed/{{b.id}}" class="btn btn-warning btn-sm">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

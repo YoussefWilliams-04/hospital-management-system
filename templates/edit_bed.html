@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 class="text-center"> Edit Bed</h3>
+
+<form method="POST">
+
+    <div class="mb-2">
+        <label>Patient</label>
+
+        <select class="form-select" name="patient" required>
+            <option value="{{ bed.patient }}" selected>{{ bed.patient }}</option>
+            {% for p in patient %}
+            <option value="{{ p.name }}">{{ p.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-2">
+        <label>Status</label>
+
+        <select class="form-select" name="status" required>
+            <option value="occupied" {% if bed.status=="occupied" %}selected{% endif %}>Occupied</option>
+            <option value="available" {% if bed.status=="available" %}selected{% endif %}>Available</option>
+        </select>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+{% endblock %}

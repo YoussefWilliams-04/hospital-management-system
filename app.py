@@ -9,7 +9,7 @@ from routes.routes_employee import employee_bp
 
 #from routes.routes_medicine import medicine_bp 
 
-
+from routes.routes_bed import bed_bp 
 
 app=Flask(__name__) 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hospital.db'
@@ -23,6 +23,7 @@ with app.app_context():
 app.register_blueprint(patient_bp)
 app.register_blueprint(employee_bp)
 #app.register_blueprint(medicine_bp)
+app.register_blueprint(bed_bp)
 
 
 
